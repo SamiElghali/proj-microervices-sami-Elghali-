@@ -1,0 +1,63 @@
+syntax = "proto3";
+package fruit;
+
+// Definition of the fruit message
+message Fruit {
+    string id = 1;
+    string name = 2;
+    string quantity = 3;
+    string prix=4;
+    // Add other data fields for fruits as needed
+}
+
+// Definition of request and response messages for methods
+message GetFruitRequest {
+    string fruit_id = 1;
+}
+
+message GetFruitResponse {
+    Fruit fruit = 1;
+}
+
+message SearchFruitsRequest {
+    string query = 1;
+}
+
+message SearchFruitsResponse {
+    repeated Fruit fruits = 1;
+}
+
+message AddFruitRequest {
+    string name = 1;
+    string quantity = 2;
+    string prix = 3 ;
+}
+
+message AddFruitResponse {
+    Fruit fruit = 1;
+}
+message UpdateFruitRequest {
+    string id = 1;
+    string name = 2;
+    string quantity = 3;
+    string prix=4;
+}
+
+message UpdateFruitResponse {
+    Fruit fruit = 1;
+}
+message DeleteFruitRequest {
+    string id = 1;
+}
+
+message DeleteFruitResponse {
+    Fruit fruit = 1;
+}
+// Definition of the fruit service
+service FruitService {
+    rpc GetFruit(GetFruitRequest) returns (GetFruitResponse);
+    rpc SearchFruits(SearchFruitsRequest) returns (SearchFruitsResponse);
+    rpc AddFruit(AddFruitRequest) returns (AddFruitResponse);
+    rpc DeleteFruit(DeleteFruitRequest) returns (DeleteFruitResponse);
+    rpc UpdateFruit(UpdateFruitRequest)returns(UpdateFruitResponse);
+}

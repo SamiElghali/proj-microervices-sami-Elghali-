@@ -1,0 +1,64 @@
+syntax = "proto3";
+package vegetable;
+
+// Definition of the vegetable message
+message Vegetable {
+    string id = 1;
+    string name = 2;
+    string quantity = 3;
+    string prix=4;
+    // Add other data fields for vegetables as needed
+}
+
+// Definition of request and response messages for methods
+message GetVegetableRequest {
+    string vegetable_id = 1;
+}
+
+message GetVegetableResponse {
+    Vegetable vegetable = 1;
+}
+
+message SearchVegetablesRequest {
+    string query = 1;
+}
+
+message SearchVegetablesResponse {
+    repeated Vegetable vegetables = 1;
+}
+
+message AddVegetableRequest {
+    string name = 1;
+    string quantity = 2;
+    string prix=3;
+}
+
+message AddVegetableResponse {
+    Vegetable vegetable = 1;
+}
+message UpdateVegetableRequest {
+    string id = 1;
+    string name = 2;
+    string quantity = 3;
+    string prix=4;
+}
+
+message UpdateVegetableResponse {
+    Vegetable vegetable = 1;
+}
+message DeleteVegetableRequest {
+    string id = 1;
+}
+
+message DeleteVegetableResponse {
+    Vegetable vegetable = 1;
+}
+// Definition of the vegetable service
+service VegetableService {
+    rpc GetVegetable(GetVegetableRequest) returns (GetVegetableResponse);
+    rpc SearchVegetables(SearchVegetablesRequest) returns (SearchVegetablesResponse);
+    rpc AddVegetable(AddVegetableRequest) returns (AddVegetableResponse);
+    rpc DeleteVegetable(DeleteVegetableRequest) returns (DeleteVegetableResponse);
+    rpc UpdateVegetable(UpdateVegetableRequest)returns(UpdateVegetableResponse);
+    // Add other methods as needed
+}
