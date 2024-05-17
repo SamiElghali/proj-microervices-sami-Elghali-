@@ -1,7 +1,7 @@
 
 # Microservice Architecture with Node.js, REST, GraphQL, Kafka
 
-This project is a simple skeleton code for microservice architecture using Node.js, Postgres, Prisma, REST, and GraphQL and Kafka. Thanks to Mr. Gontara Salah for the inspiration and knowledge in setting up this project.
+This project is a simple skeleton code for microservice architecture using Node.js, REST, GraphQL, MongoDB and Kafka. Thanks to Mr. Gontara Salah for the inspiration and knowledge in setting up this project.
 
 ![Architecture Diagram](Diagram1.jpg)
 
